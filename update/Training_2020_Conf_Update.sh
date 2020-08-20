@@ -3,7 +3,7 @@
 ######################################################
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
-##      Version : 1.3.2
+##      Version : 1.3.3
 ##      Date : 20/08/2020
 ##
 ##      Objective : Update configuration and exercices
@@ -83,7 +83,7 @@ cd "$HOME"
 
 # Exercice update
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Exerice Updates${NC}\n"
+printf "${Green}Exercice Updates${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
