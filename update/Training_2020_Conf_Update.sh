@@ -81,6 +81,18 @@ cd "$HOME"/Desktop/exercice/1_bof/
 rm payload.pl README.md,stack5.c 
 cd "$HOME"
 
+# Exercice update
+printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Exerice Updates${NC}\n"
+printf "${Green}══════════════════════════════════${NC}\n"
+cd "$HOME"
+git clone https://github.com/serma-safety-security/Training_Ressources.git
+mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
+rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
+chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
+chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
+chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
+
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Change payload file in QEMU Image${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
@@ -95,18 +107,6 @@ cp "$HOME"/Desktop/exercice/1_bof/payload.pl /mnt/raspbian/home/pi/payload.pl
 cd ~
 sudo umount /mnt/raspbian
 sudo rm -r /mnt/raspbian
-
-# Exercice update
-printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Exerice Updates${NC}\n"
-printf "${Green}══════════════════════════════════${NC}\n"
-cd "$HOME"
-git clone https://github.com/serma-safety-security/Training_Ressources.git
-mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
-rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
-chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
-chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
-chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring Cleaning${NC}\n"
