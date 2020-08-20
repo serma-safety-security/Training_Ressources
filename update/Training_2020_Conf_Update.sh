@@ -85,7 +85,6 @@ printf "${Green}═════════════════════�
 printf "${Green}Change payload file in QEMU Image${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 cd "$HOME"/Desktop/exercice/1_bof/RpiImage
-cp 2020-02-13-raspbian-buster-lite.img 2020-02-13-raspbian-buster-lite.img.bak
 OFFSET_BEGIN=$(fdisk -l 2020-02-13-raspbian-buster-lite.img | grep ".img2" | awk '{ print $2 }')
 OFFSET_SIZE=$((512 * $OFFSET_BEGIN))
 echo OFFSET_SIZE="$OFFSET_SIZE"
