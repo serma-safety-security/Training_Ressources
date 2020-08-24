@@ -66,7 +66,7 @@ sudo apt-get -y upgrade
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get -y install wireshark nmap zenmap
+sudo apt-get -y install wireshark zenmap
 sudo apt install -y python3-pyqt5
 sudo apt-get install i2c-tools
 
@@ -92,6 +92,7 @@ rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exerc
 chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
 chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
 chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
+chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Change payload file in QEMU Image${NC}\n"
