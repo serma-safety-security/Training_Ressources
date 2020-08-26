@@ -3,7 +3,7 @@
 ######################################################
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
-##      Version : 1.3.3
+##      Version : 1.3.4
 ##      Date : 20/08/2020
 ##
 ##      Objective : Update configuration and exercices
@@ -66,9 +66,9 @@ sudo apt-get -y upgrade
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get -y install wireshark zenmap
+sudo apt-get -y install wireshark zenmap audacity wxhexeditor
 sudo apt install -y python3-pyqt5
-sudo apt-get install i2c-tools
+sudo apt-get install i2c-tools  
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
