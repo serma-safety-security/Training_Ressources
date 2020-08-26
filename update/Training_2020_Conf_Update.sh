@@ -4,7 +4,7 @@
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
 ##      Version : 1.3.4
-##      Date : 20/08/2020
+##      Date : 28/08/2020
 ##
 ##      Objective : Update configuration and exercices
 ##       To use do :
