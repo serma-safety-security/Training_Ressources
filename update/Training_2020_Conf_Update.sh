@@ -66,9 +66,8 @@ sudo apt-get -y upgrade
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get -y install wireshark zenmap audacity wxhexeditor
-sudo apt install -y python3-pyqt5
-sudo apt-get install i2c-tools  
+sudo apt-get -y install audacity wxhexeditor
+sudo apt -y install openvpn bridge-utils
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
@@ -95,26 +94,50 @@ chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
 chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
 
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Change payload file in QEMU Image${NC}\n"
-printf "${Green}══════════════════════════════════${NC}\n"
-cd "$HOME"/Desktop/exercice/1_bof/RpiImage
-OFFSET_BEGIN=$(fdisk -l 2020-02-13-raspbian-buster-lite.img | grep ".img2" | awk '{ print $2 }')
-OFFSET_SIZE=$((512 * $OFFSET_BEGIN))
-echo OFFSET_SIZE="$OFFSET_SIZE"
-sudo mkdir /mnt/raspbian
-#sudo mount -v -o offset=272629760 -t ext4 2020-02-13-raspbian-buster-lite.img /mnt/raspbian
-sudo mount -v -o offset="$OFFSET_SIZE" -t ext4 2020-02-13-raspbian-buster-lite.img /mnt/raspbian
-cp "$HOME"/Desktop/exercice/1_bof/payload.pl /mnt/raspbian/home/pi/payload.pl
-cd ~
-sudo umount /mnt/raspbian
-sudo rm -r /mnt/raspbian
-
-printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring Cleaning${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 sudo apt -y autoremove
 sudo rm -rf "$HOME"/Downloads/Training_Ressources
 sudo rm -rf "$HOME"/Downloads/WiringPi
+
+printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Change SSH welcome screen${NC}\n"
+printf "${Green}══════════════════════════════════${NC}\n"
+cat /etc/ssh/sshd_config | sed -e "s/#Banner none/Banner \/etc\/banner/" | sudo tee /etc/ssh/sshd_config
+read -r -d '' CompanyName<< EOM
+╔══════════════════════════════════════════╗
+║ ______         ___ _       _             ║
+║(_____ \       / __|_)     (_)            ║
+║ _____) ) ____| |__ _ ____  _ _   _ ____  ║
+║(_____ ( / _  )  __) |  _ \| | | | |    \ ║
+║      | ( (/ /| |  | | | | | | |_| | | | |║
+║      |_|\____)_|  |_|_| |_|_|\____|_|_|_|║
+╚══════════════════════════════════════════╝
+EOM
+
+read -r -d '' RadioactiveHazard << EOM
+*                xxxxxxx
+            x xxxxxxxxxxxxx x
+         x     xxxxxxxxxxx     x
+                xxxxxxxxx
+      x          xxxxxxx          x
+                  xxxxx
+     x             xxx             x
+                    x
+    xxxxxxxxxxxxxxx   xxxxxxxxxxxxxxx
+     xxxxxxxxxxxxx     xxxxxxxxxxxxx
+      xxxxxxxxxxx       xxxxxxxxxxx
+       xxxxxxxxx         xxxxxxxxx
+         xxxxxx           xxxxxx
+           xxx             xxx
+               x         x
+                    x
+═══DANGER YOU ARE IN A RADIOACTIVE ZONE!!!════
+EOM
+
+SSH_Banner="$CompanyName$\n$RadioactiveHazard\n"
+printf "$SSH_Banner" | sudo tee /etc/banner
+
 
 # Reboot
 printf "${Green}══════════════════════════════════${NC}\n"

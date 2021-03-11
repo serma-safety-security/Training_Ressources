@@ -83,6 +83,8 @@ printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 sudo apt -y install gqrx-sdr openocd hexedit
 sudo apt-get install -y axel wireshark nmap zenmap
+sudo apt-get -y install audacity wxhexeditor
+sudo apt -y install openvpn bridge-utils
 sudo apt-get install i2c-tools
 echo "dtparam=i2c_arm=on" | sudo tee -a /boot/config.txt
 
