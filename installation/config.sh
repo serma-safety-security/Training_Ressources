@@ -70,6 +70,10 @@ printf "${Green}═════════════════════�
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 sudo apt -y install gqrx-sdr openocd hexedit
+#Silent install of wireshark and auto accept wireshark run as root
+echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install wireshark
+
 sudo apt-get install -y axel wireshark nmap zenmap
 sudo apt-get -y install audacity wxhexeditor
 sudo apt -y install openvpn bridge-utils
