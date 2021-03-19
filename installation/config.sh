@@ -3,8 +3,8 @@
 ######################################################
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
-##      Version : 1.0.0
-##      Date : 29/07/2020
+##      Version : 1.0.2
+##      Date : 19/03/2021
 ##  
 ##      Objective : Configure Raspberry Pi
 ##
