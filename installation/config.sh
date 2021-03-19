@@ -56,18 +56,6 @@ printf "${Green}═════════════════════�
 printf "${Green}Variable definitions${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 
-URL_EXERCICE_GIT_SERMA="https://raw.githubusercontent.com/serma-safety-security/Training_Ressources/master/"
-echo URL_EXERCICE_GIT_SERMA="$URL_EXERCICE_GIT_SERMA"
-
-EXERCICE_BOF_SOURCE="/exercice/stack5.c"
-echo EXERCICE_BOF_SOURCE="$EXERCICE_BOF_SOURCE"
-
-EXERCICE_PAYLOAD_GEN_SOURCE="/exercice/payload.pl"
-echo EXERCICE_PAYLOAD_GEN_SOURCE="$EXERCICE_PAYLOAD_GEN_SOURCE"
-
-EXERCICE_BOF_README="/exercice/README.md"
-echo EXERCICE_BOF_README="$EXERCICE_BOF_README"
-
 # Start Script
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Start Script${NC}\n"
@@ -131,13 +119,19 @@ sudo pip3 install ropper
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Retreive Exercice${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
+cd /home/pi
 mkdir "Desktop"
-cd ~/Desktop/
+cd /home/pi/Desktop/
 mkdir "exercice"
 cd exercice
-wget "$URL_EXERCICE_GIT_SERMA/$EXERCICE_BOF_SOURCE"
-wget "$URL_EXERCICE_GIT_SERMA/$EXERCICE_PAYLOAD_GEN_SOURCE"
-wget "$URL_EXERCICE_GIT_SERMA/$EXERCICE_BOF_README"
+cd "$HOME"
+git clone https://github.com/serma-safety-security/Training_Ressources.git
+mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
+rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
+chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
+chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
+chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
+chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Change SSH welcome screen${NC}\n"
