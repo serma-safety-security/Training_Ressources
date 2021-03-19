@@ -127,15 +127,15 @@ cd /home/pi
 mkdir "Desktop"
 cd /home/pi/Desktop/
 mkdir "exercice"
-cd exercice
 cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
-mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
+rsync -aR Training_Ressources "$HOME"/Downloads/
 rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
 chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
 chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
 chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
 chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
+rm -rf Training_Ressources/ Downloads/Training_Ressources/
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Change SSH welcome screen${NC}\n"
