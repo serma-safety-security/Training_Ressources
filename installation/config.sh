@@ -73,17 +73,36 @@ sudo apt -y install gqrx-sdr openocd hexedit
 #Silent install of wireshark and auto accept wireshark run as root
 echo "wireshark-common wireshark-common/install-setuid boolean true" | sudo debconf-set-selections
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install wireshark
-
+sudo apt install gdb-multiarch telnet
 sudo apt-get install -y axel wireshark nmap zenmap
 sudo apt-get -y install audacity wxhexeditor
 sudo apt -y install openvpn bridge-utils
 sudo apt-get install i2c-tools
 echo "dtparam=i2c_arm=on" | sudo tee -a /boot/config.txt
 
+printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Install Hardsploit${NC}\n"
+printf "${Green}══════════════════════════════════${NC}\n"
+## The strict minimum dependancies should eventualy be installed so tests are necessary
+sudo apt-get install ruby ruby-dev cmake build-essential dfu-util libqt4-dev libusb-1.0-0 \
+bison openssl libreadline5 libreadline-dev git-core zlib1g zlib1g-dev libssl-dev \
+libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev subversion autoconf xorg-dev \
+libgl1-mesa-dev libglu1-mesa-dev
+
+sudo gem install qtbindings activerecord libusb sqlite3
+gem install sqlite3 -v 1.3.9
+
+sudo gem install hardsploit_gui
+
+## QT_X11_NO_MITSHM=1
+
 # URH
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Install URH${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
+# Install RTL-SDR support for URH
+sudo apt install librtlsdr-dev
+# Now install URH
 sudo python3 -m pip install --upgrade pip
 sudo python3 -m pip install cython
 sudo apt -y install python3-pyqt5
