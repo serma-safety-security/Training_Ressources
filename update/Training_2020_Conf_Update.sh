@@ -3,8 +3,8 @@
 ######################################################
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
-##      Version : 1.3.4
-##      Date : 28/08/2020
+##      Version : 1.4.0
+##      Date : 07/06/2021
 ##
 ##      Objective : Update configuration and exercices
 ##       To use do :
@@ -49,7 +49,6 @@ read -r -d '' ASCII_ART_TITLE  <<"EOF"
   \_____\___/|_| |_|_|  \____/| .__/ \__,_|\__,_|\__\___|
                               | |
                               |_|
-
 EOF
 printf "${Yellow}$ASCII_ART_TITLE${NC}\n"
 
@@ -66,19 +65,12 @@ sudo apt-get -y upgrade
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get -y install audacity wxhexeditor
-sudo apt -y install openvpn bridge-utils
+sudo gem install qtbindings activerecord libusb sqlite3
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-cd "$HOME"
-sudo rm -r ~/Downloads/qemu
-rm -r "$HOME"/Desktop/exercice/2_sdr/*
 
-cd "$HOME"/Desktop/exercice/1_bof/
-rm payload.pl README.md,stack5.c 
-cd "$HOME"
 
 # Exercice update
 printf "${Green}══════════════════════════════════${NC}\n"
@@ -88,56 +80,13 @@ cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
 rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
-chmod +x "$HOME"/Desktop/exercice/1_bof/payload.pl
-chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
-chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
-chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
+cp -r /var/lib/gems/2.5.0/gems/hardsploit_gui-2.5.0/lib/hardsploit-api /home/pi/Desktop/exercice/1_hw_hacking_101
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring Cleaning${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 sudo apt -y autoremove
 sudo rm -rf "$HOME"/Downloads/Training_Ressources
-sudo rm -rf "$HOME"/Downloads/WiringPi
-
-printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Change SSH welcome screen${NC}\n"
-printf "${Green}══════════════════════════════════${NC}\n"
-cat /etc/ssh/sshd_config | sed -e "s/#Banner none/Banner \/etc\/banner/" | sudo tee /etc/ssh/sshd_config
-read -r -d '' CompanyName<< EOM
-╔══════════════════════════════════════════╗
-║ ______         ___ _       _             ║
-║(_____ \       / __|_)     (_)            ║
-║ _____) ) ____| |__ _ ____  _ _   _ ____  ║
-║(_____ ( / _  )  __) |  _ \| | | | |    \ ║
-║      | ( (/ /| |  | | | | | | |_| | | | |║
-║      |_|\____)_|  |_|_| |_|_|\____|_|_|_|║
-╚══════════════════════════════════════════╝
-EOM
-
-read -r -d '' RadioactiveHazard << EOM
-*                xxxxxxx
-            x xxxxxxxxxxxxx x
-         x     xxxxxxxxxxx     x
-                xxxxxxxxx
-      x          xxxxxxx          x
-                  xxxxx
-     x             xxx             x
-                    x
-    xxxxxxxxxxxxxxx   xxxxxxxxxxxxxxx
-     xxxxxxxxxxxxx     xxxxxxxxxxxxx
-      xxxxxxxxxxx       xxxxxxxxxxx
-       xxxxxxxxx         xxxxxxxxx
-         xxxxxx           xxxxxx
-           xxx             xxx
-               x         x
-                    x
-═══DANGER YOU ARE IN A RADIOACTIVE ZONE!!!════
-EOM
-
-SSH_Banner="$CompanyName$\n$RadioactiveHazard\n"
-printf "$SSH_Banner" | sudo tee /etc/banner
-
 
 # Reboot
 printf "${Green}══════════════════════════════════${NC}\n"
