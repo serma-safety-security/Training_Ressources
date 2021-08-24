@@ -65,7 +65,7 @@ sudo apt-get -y upgrade
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo gem install qtbindings activerecord libusb sqlite3
+
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
