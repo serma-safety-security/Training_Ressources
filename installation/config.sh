@@ -123,7 +123,7 @@ cd /home/pi
 sudo curl -s -L https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
 
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Activating VNC${NC}\n"
+printf "${Green}Enable VNC${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 sudo ln -s /usr/lib/systemd/system/vncserver-x11-serviced.service /etc/systemd/system/multi-user.target.wants/vncserver-x11-serviced.service
 sudo systemctl start vncserver-x11-serviced
@@ -140,7 +140,7 @@ printf "${Green}═════════════════════�
 sudo pip3 install ropper
 
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Retreive Exercice${NC}\n"
+printf "${Green}Retrieve Exercice${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 cd /home/pi
 mkdir "Desktop"
@@ -155,6 +155,7 @@ chmod +x "$HOME"/Desktop/exercice/2_sdr/receive_data
 chmod +x "$HOME"/Desktop/exercice/2_sdr/send_data
 chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium
 rm -rf Training_Ressources/ Downloads/Training_Ressources/
+cp -r /var/lib/gems/2.5.0/gems/hardsploit_gui-2.5.0/lib/hardsploit-api /home/pi/Desktop/exercice/1_hw_hacking_101
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Change SSH welcome screen${NC}\n"
