@@ -80,7 +80,6 @@ cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
 rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
-cp -r /var/lib/gems/2.5.0/gems/hardsploit_gui-2.5.0/lib/hardsploit-api /home/pi/Desktop/exercice/1_hw_hacking_101
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring Cleaning${NC}\n"
