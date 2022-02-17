@@ -158,7 +158,7 @@ rm -rf Training_Ressources/ Downloads/Training_Ressources/
 cp -r /var/lib/gems/2.5.0/gems/hardsploit_gui-2.5.0/lib/hardsploit-api /home/pi/Desktop/exercice/1_hw_hacking_101
 
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Change SSH welcome screen${NC}\n"
+printf "${Green}Visuals${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 cat /etc/ssh/sshd_config | sed -e "s/#Banner none/Banner \/etc\/banner/" | sudo tee /etc/ssh/sshd_config
 read -r -d '' CompanyName<< EOM
@@ -194,6 +194,9 @@ EOM
 
 SSH_Banner="$CompanyName$\n$RadioactiveHazard\n"
 printf "$SSH_Banner" | sudo tee /etc/banner
+
+wget -q https://raw.githubusercontent.com/serma-safety-security/Training_Ressources/master/installation/serma_wallpaper.png -o /home/pi/Pictures/serma_wallpaper.png
+pcmanfm --set-wallpaper /home/pi/Pictures/serma_wallpaper.png
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring cleaning${NC}\n"
