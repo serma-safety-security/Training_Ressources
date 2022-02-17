@@ -89,8 +89,9 @@ bison openssl libreadline5 libreadline-dev git-core zlib1g zlib1g-dev libssl-dev
 libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev subversion autoconf xorg-dev \
 libgl1-mesa-dev libglu1-mesa-dev
 
-sudo gem install qtbindings activerecord libusb sqlite3
-gem install sqlite3 -v 1.3.9
+sudo gem install qtbindings libusb sqlite3
+sudo gem install activerecord -v 6.1.4.6
+sudo gem install sqlite3 -v 1.3.9
 
 sudo gem install hardsploit_gui
 
