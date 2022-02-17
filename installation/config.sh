@@ -196,7 +196,7 @@ SSH_Banner="$CompanyName$\n$RadioactiveHazard\n"
 printf "$SSH_Banner" | sudo tee /etc/banner
 
 wget -q https://raw.githubusercontent.com/serma-safety-security/Training_Ressources/master/installation/serma_wallpaper.png -o /home/pi/Pictures/serma_wallpaper.png
-pcmanfm --set-wallpaper /home/pi/Pictures/serma_wallpaper.png
+pcmanfm --set-wallpaper /home/pi/serma_wallpaper.png
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring cleaning${NC}\n"
