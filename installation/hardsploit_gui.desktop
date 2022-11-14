@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hardsploit GUI
+Comment=The essential security auditing tool for Internet of Things devices you'll need in your toolbox
+Exec=hardsploit_gui
+Categories=Development;Science;
+Keywords=Hardware;hacking;
+Icon=/opt/hardsploitGUI/icon.png
