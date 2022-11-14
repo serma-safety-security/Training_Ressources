@@ -3,8 +3,8 @@
 ######################################################
 ##      SERMA SAFETY AND SECURITY
 ##      Author : MDM
-##      Version : 1.4.0
-##      Date : 07/06/2021
+##      Version : 1.5.0
+##      Date : 14/11/2022
 ##
 ##      Objective : Update configuration and exercices
 ##       To use do :
@@ -57,29 +57,37 @@ printf "${Green}═════════════════════�
 printf "${Green}Start Script${NC}\n"
 printf "${Green}Begin update & upgrade${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get -y update
-sudo apt-get -y dist-upgrade
-sudo apt-get -y upgrade
+#sudo apt-get -y update
+#sudo apt-get -y dist-upgrade
+#sudo apt-get -y upgrade
 
 # Software installation
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-
+printf "${Green}Nothing to do${NC}\n"
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Nothing to do${NC}\n"
+
+printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Deleting obsolete files and folders${NC}\n"
+printf "${Green}══════════════════════════════════${NC}\n"
+printf "${Green}Nothing to do${NC}\n"
+
 
 
 # Exercice update
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Exercice Updates${NC}\n"
+printf "${Green}Exercice and conf. update  ${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
 cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
-rsync -a "$HOME"/Downloads/Training_Ressources/exercices/* "$HOME"/Desktop/exercice/
+rsync  -arv --dry-run "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
+
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Spring Cleaning${NC}\n"
