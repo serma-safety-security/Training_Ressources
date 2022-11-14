@@ -86,7 +86,8 @@ printf "${Green}═════════════════════�
 cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
-rsync  -arv --dry-run "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
 
 
 printf "${Green}══════════════════════════════════${NC}\n"
