@@ -8,7 +8,7 @@
 ##
 ##      Objective : Update configuration and exercices
 ##       To use do :
-##        sh -c "$(curl -fsSL https://raw.githubusercontent.com/serma-safety-security/Training_Ressources/master/update/Training_2020_Conf_Update.sh)"
+##        sh -c "$(curl -fsSL https://raw.githubusercontent.com/serma-safety-security/Training_Ressources/master/update/Training_2022_Conf_Update.sh)"
 ##
 ######################################################
 
