@@ -65,7 +65,7 @@ printf "${Green}═════════════════════�
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-printf "${Green}Nothing to do${NC}\n"
+sudo apt-get install libgtk-3-dev
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
@@ -87,6 +87,7 @@ cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
 rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
 rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
 
 
