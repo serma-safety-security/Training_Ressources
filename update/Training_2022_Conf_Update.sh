@@ -88,8 +88,9 @@ cd "$HOME"
 git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
 rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
-rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
-rsync  -arv "$HOME"/Downloads/Training_Ressources/exercices/3_ctf/refinium/refinium  /home/pi/Desktop/exercice/3_ctf/refinium/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  "$HOME"/.local/share/applications/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/exercices/3_ctf/refinium/refinium  "$HOME"/Desktop/exercice/3_ctf/refinium/
+chmod +x "$HOME"/Desktop/exercice/3_ctf/refinium/refinium
 
 
 printf "${Green}══════════════════════════════════${NC}\n"
