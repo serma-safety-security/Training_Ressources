@@ -65,7 +65,8 @@ printf "${Green}═════════════════════�
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Software installation${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-sudo apt-get install libgtk-3-dev
+sudo apt install -y libgtk-3-dev
+sudo apt install -y netcat
 
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Deleting obsolete files and folders${NC}\n"
@@ -88,7 +89,7 @@ git clone https://github.com/serma-safety-security/Training_Ressources.git
 mv "$HOME"/Training_Ressources/ "$HOME"/Downloads/
 rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit.db  /opt/hardsploitGUI/db/
 rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
-rsync  -arv "$HOME"/Downloads/Training_Ressources/installation/hardsploit_gui.desktop  /home/pi/.local/share/applications/
+rsync  -arv "$HOME"/Downloads/Training_Ressources/exercices/3_ctf/refinium/refinium  /home/pi/Desktop/exercice/3_ctf/refinium/
 
 
 printf "${Green}══════════════════════════════════${NC}\n"
@@ -101,12 +102,12 @@ sudo rm -rf "$HOME"/Downloads/Training_Ressources
 printf "${Green}══════════════════════════════════${NC}\n"
 printf "${Green}Reboot${NC}\n"
 printf "${Green}══════════════════════════════════${NC}\n"
-echo "About to execute reboot command"
-echo -n "Would you like to proceed y/n? "
-read reply
-if [ "$reply" = y -o "$reply" = Y ]
-then
-   sudo reboot now
-else
-   echo "Reboot cancelled"
-fi
+# echo "About to execute reboot command"
+# echo -n "Would you like to proceed y/n? "
+# read reply
+# if [ "$reply" = y -o "$reply" = Y ]
+# then
+#    sudo reboot now
+# else
+#    echo "Reboot cancelled"
+# fi
